@@ -48,23 +48,25 @@ public class onbuttonclickRegister extends AsyncTask<String, Void, String> {
             // TODO Auto-generated catch block
         	str = e.getMessage();
         }
-     //   Context context = getApplicationContext();
-
         return str;
     }
     
     @Override
     protected void onPostExecute(String result) {       
-        String text = "Response: " + result + "Your details have been registered";
+        String text = "Your details have been registered";
         int duration = Toast.LENGTH_LONG;
 
         Toast toast = Toast.makeText(ctx, text, duration);
-        toast.show();
-       
+        toast.show();       
     }
 
     @Override
     protected void onPreExecute() {
+        String text = "Registering...";
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(ctx, text, duration);
+        toast.show();
     }
 
     @Override
